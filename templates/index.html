@@ -9,56 +9,61 @@
 </head>
 
 <body>
-
-    <div style="color:black">
+    <h1> Diabetes Prediction</h1>
+    <div style="color:black; font-size:20px;"">
         <form action="{{ url_for('predict')}}" method="post">
-            
-    <label>Pregnancies</label>
-      <input type="text" name="Pregnancies" required="required" />
+        </br>
+      </br>    
+    <label class="la">Pregnancies</label>
+      <input class="in" type="text" name="Pregnancies" required="required" />
       </br>
       </br>
-      <label>Glucose</label>
-      <input type="text" name="Glucose" required="required" />
+      <label class="la">Glucose</label>
+      <input class="in" type="text" name="Glucose" required="required" />
+      </br>
+      </br> 
+      <label class="la">BloodPressure</label>
+      <input class="in" type="text" name="BloodPressure" required="required" />
       </br>
       </br>
-      <label>BloodPressure</label>
-      <input type="text" name="BloodPressure" required="required" />
+      <label class="la">SkinThickness</label>
+      <input class="in" type="text" name="SkinThickness" required="required" />
       </br>
       </br>
-      <label>SkinThickness</label>
-      <input type="text" name="SkinThickness" required="required" />
+      <label class="la">Insulin</label>
+      <input class="in" type="text" name="Insulin" required="required" />
       </br>
       </br>
-      <label>Insulin</label>
-      <input type="text" name="Insulin" required="required" />
+      <label class="la">BMI</label>
+      <input class="in" type="text" name="BMI" required="required" />
       </br>
       </br>
-      <label>BMI</label>
-      <input type="text" name="BMI" required="required" />
+      <label class="la">DPF</label>
+      <input class="in" type="text" name="DiabetesPedigreeFunction" required="required" />
       </br>
       </br>
-      <label>DiabetesPedigreeFunction</label>
-      <input type="text" name="DiabetesPedigreeFunction" required="required" />
-      </br>
-      </br>
-      <label>Age</label>
-      <input type="text" name="Age" required="required" />
+      <label class="la">Age</label>
+      <input class="in" type="text" name="Age" required="required" />
       </br>
       </br>
         <button id="sub" type="submit "> Predict</button>
 
     </form>
+    </br>
+    </br>
+    <h3>{{ prediction_text }}<h3>
+    </div>
   <div class="col-sm-6" >
 
             <div class="card">
 
               <div class="card-body">
+                </br>       
+                <h2 class="card-title">Diabetes prediction using CSV file</h2><br><br>
 
-                <h5 class="card-title">Electrical Bill prediction using CSV file</h5><br><br>
+            <form action="/default" method="post" enctype="multipart/form-data">
 
-                <form action="/default" method="post" enctype="multipart/form-data">
-
-                  <button type="submit" class="btn btn-success">click here</button>
+                 <button type="submit" class="btn">click here</button>
 
              </form>
 
@@ -71,26 +76,44 @@
 
 
 
-        <br><br><h3>{{ prediction_text }}<h3>
-    </div>
-
-
-
-
     <style>
         body {
-            background-color: lightslategray;
+            background-color: #ffffcc;
             text-align: center;
             padding: 0px;
         }
+        
+       
+        .la{
+        cursor: pointer;
+            display: inline-block;
+            padding: 3px 6px;
+            text-align: right;
+            width: 150px;
+            vertical-align: top;        
+        }
+        
+        
+        .in{
+        font-size: inherit;
+        }
+         
          #sub {
             width: 120px;
             height: 43px;
             text-align: center;
             border-radius: 14px;
             font-size: 18px;
+            background-color: #ff9966;
         }
-        
+        .btn{
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+            background-color: #ff9966;
+        }
 
     </style>
 </body>
